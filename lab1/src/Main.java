@@ -14,7 +14,7 @@ public class Main {
         for (int i = 0; i < n; i++) {
 //            A[i] = new double[100];
             for (int j = 0; j < m; j++) {
-
+                System.out.printf("a[%d][%d] = ", i,j);
                 A[i][j] = s.nextDouble();
             }
             b[i] = s.nextDouble();
@@ -43,7 +43,14 @@ public class Main {
                 double alpha = A[i][p] / A[p][p];
                 b[i] -= alpha * b[p];
                 for (int j = p; j < N; j++) {
-                    A[i][j] -= alpha * A[p][j];
+                    try{S
+                     A[i][j] -= alpha * A[p][j];
+                }
+                catch (ArrayIndexOutOfBoundsException sq){
+                     System.out.println("NO");
+                     return;
+                }
+
                 }
             }
         }
